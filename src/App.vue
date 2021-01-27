@@ -1,6 +1,12 @@
 <template>
   <Header/>
-  <QuestionBox/>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-lg-12 col-md-12">
+        <QuestionBox/>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
