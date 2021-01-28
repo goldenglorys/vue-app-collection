@@ -3,7 +3,11 @@
   <div class="container">
   <div class="row">
     <div class="col-sm-6 col-lg-12 col-md-12">
-        <QuestionBox/>
+        <QuestionBox 
+          v-if="questions.length"
+          :currentQuestion="questions[index]"
+          :next="next"
+        />
     </div>
   </div>
 </div>
@@ -21,7 +25,13 @@ export default {
   },
   data() {
     return {
-      questions: [] 
+      questions: [],
+      index: 0
+    }
+  },
+  methods: {
+    next() {
+      this.index++
     }
   },
   mounted: function(){
