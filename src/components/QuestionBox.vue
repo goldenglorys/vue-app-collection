@@ -10,11 +10,18 @@
                 v-for="(answer, index) in answers"
                 :key="index"
                 @click="selectAnswer(index)"
-                :class="[selectedIndex == index ? 'selected' : '']"
+                :class="answerClass(index)"
                 >{{ answer }}</li>
             </ul>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Submit</a>
-             <a class="btn btn-success btn-lg" href="#" role="button" @click="next">
+            <a class="btn btn-primary btn-lg" href="#" role="button"
+                @click="submitAnswer"
+                :class="selectedIndex === null || answered ? 'disabled': '' "
+            >
+                Submit
+            </a>
+             <a class="btn btn-success btn-lg" href="#" role="button" 
+             @click="next"
+             >
                  Next
             </a>
         </div>
@@ -27,12 +34,15 @@ import _ from 'lodash'
 export default {
     props: {
         currentQuestion: Object,
-        next: Function
+        next: Function,
+        increment: Function
     },
     data() {
         return {
             selectedIndex: null,
-            shuffledAnswers: []
+            correctIndex: null,
+            shuffledAnswers: [],
+            answered: false,
         }
     },
     computed: {
@@ -43,9 +53,13 @@ export default {
         }
     },
     watch: {
-        currentQuestion() {
-            this.selectedIndex = null
-            this.shuffleAnswers()
+        currentQuestion: {
+           immediate: true,
+           handler() {
+                this.selectedIndex = null
+                this.shuffleAnswers()
+                this.answered = false
+           }
         }
     },
     methods: {
@@ -55,8 +69,26 @@ export default {
         shuffleAnswers() {
             let answers = [...this.currentQuestion.incorrect_answers, this.currentQuestion.correct_answer]
             this.shuffledAnswers = _.shuffle(answers)
+            this.correctIndex = this.shuffledAnswers.indexOf(this.currentQuestion.correct_answer)
+        },
+        submitAnswer() {
+            let isCorrect = false
+            isCorrect = this.selectedIndex === this.correctIndex ? true : false
+            this.increment(isCorrect)
+            this.answered = true
+        },
+        answerClass(index) {
+            let answerClass = '' 
+            if (!this.answered && this.selectedIndex == index) {
+                answerClass = 'selected'
+            } else if (this.answered && this.correctIndex == index ) {
+                answerClass = 'correct'
+            } else if (this.answered && this.selectedIndex == index && this.correctIndex != index) {
+                answerClass = 'incorrect'
+            }
+            return answerClass
         }
-    }
+    },
 }
 </script>
 

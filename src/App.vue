@@ -1,5 +1,8 @@
 <template>
-  <Header/>
+  <Header 
+    :numCorrect="numCorrect"
+    :numTotal="numTotal"
+  />
   <div class="container">
   <div class="row">
     <div class="col-sm-6 col-lg-12 col-md-12">
@@ -7,6 +10,7 @@
           v-if="questions.length"
           :currentQuestion="questions[index]"
           :next="next"
+          :increment="increment"
         />
     </div>
   </div>
@@ -26,12 +30,20 @@ export default {
   data() {
     return {
       questions: [],
-      index: 0
+      index: 0,
+      numCorrect: 0,
+      numTotal: 0
     }
   },
   methods: {
     next() {
       this.index++
+    },
+    increment(isCorrect) {
+      if(isCorrect){
+        this.numCorrect++
+      }
+      this.numTotal++
     }
   },
   mounted: function(){
