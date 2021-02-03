@@ -1,6 +1,6 @@
 <template>
-  <nav class="w-full bg-gradient-to-r from-green-800 to-green-600">
-      <a href="">Vue App Collection</a>
+  <nav class="w-full bg-gradient-to-r from-green-900 to-green-500 text-white px-4 py-4">
+      <a >Vue App Collection</a>
   </nav>
 </template>
 

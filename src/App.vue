@@ -1,5 +1,8 @@
 <template>
 <AppHeader />
+<div class="w-full flex">
+  <Calendar />
+</div>
   <!-- <QuestionHeader 
     :numCorrect="numCorrect"
     :numTotal="numTotal"
@@ -23,13 +26,15 @@
 // import QuestionHeader from './components/QuestionHeader.vue'
 // import QuestionBox from './components/QuestionBox.vue'
 import AppHeader from './components/AppHeader.vue'
+import Calendar from './components/Calendar.vue'
 
 export default {
   name: "App",
   components: {
     // QuestionHeader,
     // QuestionBox,
-    AppHeader
+    AppHeader,
+    Calendar,
   },
   data() {
     return {
@@ -65,12 +70,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
