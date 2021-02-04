@@ -14,6 +14,15 @@
 10. Netlify
 11. Tensorflow
 
+
+Quiz App
+Adopt Pet App
+Calendly App
+Markdown Converter App
+Login With Firebase Backend
+User Crud API App
+Chat With Firebase Real-time Db Function
+Tensorflow Object Detection App
 ## Demo 👇
 
 [Netlify Deployed Project](https://vue-apps.netlify.app)
