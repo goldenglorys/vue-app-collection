@@ -1,15 +1,13 @@
 <template>
-  <QuestionHeader :numCorrect="numCorrect" :numTotal="numTotal" />
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-lg-12 col-md-12">
-        <QuestionBox
-          v-if="questions.length"
-          :currentQuestion="questions[index]"
-          :next="next"
-          :increment="increment"
-        />
-      </div>
+  <div class="m-auto">
+    <QuestionHeader :numCorrect="numCorrect" :numTotal="numTotal" />
+    <div class="text-center">
+      <QuestionBox
+        v-if="questions.length"
+        :currentQuestion="questions[index]"
+        :next="next"
+        :increment="increment"
+      />
     </div>
   </div>
 </template>
