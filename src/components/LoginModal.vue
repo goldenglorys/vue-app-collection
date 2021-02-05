@@ -9,6 +9,8 @@
       <div class="m-auto bg-white p-2 rounded shadow z-30 w-1/3">
         <div class="p-2 border">
           <h1 class="text-center text-2xl">Login</h1>
+          <GoogleLogin @close-login-from-google="closeLoginModal" />
+          <p class="my-1 text-center">or</p>
           <form class="p-2 my-2" @submit.prevent="submit()">
             <div class="my-4">
               <label for="email">Email Address</label>
@@ -56,7 +58,11 @@
 
 <script>
 import firebase from "../helpers/firebase";
+import GoogleLogin from "../components/GoogleLogin";
 export default {
+  components: {
+    GoogleLogin,
+  },
   data() {
     return {
       email: "email@domain.com",

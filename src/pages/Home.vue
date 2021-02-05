@@ -1,20 +1,14 @@
 <template>
   <div class="flex w-full">
     <div class="m-auto">
-      <h1 class="text-center text-2xl md:text-4xl my-2">
-        Vue 3 Full Course - 10 Apps in 10 Hours
-      </h1>
+      <h1 class="text-center text-2xl md:text-4xl my-2">Vue App Collection</h1>
       <div class="">
         <div class="flex justify-around mb-4">
           <a
-            href="https://github.com/bitfumes/vue3-for-beginners"
+            class="hover:no-underline hover:text-black"
+            href="https://github.com/goldenglorys/vue-app-collection"
             target="_blank"
-            >Github Source Code</a
-          >
-          <a
-            href="https://www.canva.com/design/DAEJRdAPBlc/V_Tcr4uLQhpf7Gh0ANXAKw/view?utm_content=DAEJRdAPBlc&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
-            target="_blank"
-            >Canva Presentation</a
+            >GitHub Source Code</a
           >
         </div>
 
@@ -22,7 +16,9 @@
           <div class="w-11/12 grid grid-cols-2 md:grid-cols-3 gap-4">
             <div v-for="app in list" :key="app.path" class="text-left my-4">
               <router-link class="w-full" :to="app.path">
-                <p class="text-xl font-semibold">🔷 {{ app.title }}</p>
+                <p class="text-xl font-semibold">
+                  <span>&#10004;</span> {{ app.title }}
+                </p>
               </router-link>
               <div>
                 <div class="font-semibold mt-2">Topic Covered:</div>
@@ -30,7 +26,7 @@
               </div>
             </div>
             <div class="text-left my-4">
-              <p class="text-xl font-semibold">🔷 Login</p>
+              <p class="text-xl font-semibold"><span>&#10004;</span> Login</p>
               <div class="">
                 <div class="text-lg font-semibold">Topic Covered:</div>
                 <p v-for="topic in login.concepts" :key="topic">{{ topic }}</p>
