@@ -13,6 +13,7 @@
             <div class="my-4">
               <label for="email">Email Address</label>
               <input
+                readonly
                 type="email"
                 class="rounded shadow p-2 w-full"
                 placeholder="Enter your email address"
@@ -22,6 +23,7 @@
             <div class="my-4">
               <label for="password">Password</label>
               <input
+                readonly
                 type="password"
                 class="rounded shadow p-2 w-full"
                 placeholder="ENter your password"

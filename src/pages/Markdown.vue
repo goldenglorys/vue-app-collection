@@ -4,6 +4,7 @@
     <section class="flex w-10/12 m-auto h-screen">
       <article class="w-1/2 border">
         <textarea
+          ref="markdownTextArea"
           class="w-full h-full"
           :value="text"
           @input="update"
@@ -36,6 +37,9 @@ export default {
         this.text = input.target.value;
       }, 500);
     },
+  },
+  mounted() {
+    this.$refs.markdownTextArea.focus();
   },
 };
 </script>
