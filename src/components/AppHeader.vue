@@ -28,6 +28,7 @@ export default {
         { title: "Calendly", to: "/calendly" },
         { title: "Quiz", to: "/quiz" },
         { title: "Markdown", to: "/markdown" },
+        { title: "Chat", to: "/chat" },
       ],
     };
   },

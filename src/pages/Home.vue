@@ -5,7 +5,7 @@
       <div class="">
         <div class="flex justify-around mb-4">
           <a
-            class="hover:no-underline hover:text-black"
+            class="hover:no-underline"
             href="https://github.com/goldenglorys/vue-app-collection"
             target="_blank"
             >GitHub Source Code</a
@@ -15,16 +15,13 @@
         <div class="flex justify-center">
           <div class="w-11/12 grid grid-cols-2 md:grid-cols-3 gap-4">
             <div v-for="app in list" :key="app.path" class="text-left my-4">
-              <router-link
-                class="w-full hover:no-underline hover:text-black"
-                :to="app.path"
-              >
+              <router-link class="w-full hover:no-underline" :to="app.path">
                 <p class="text-xl font-semibold">
                   <span>&#10004;</span> {{ app.title }}
                 </p>
               </router-link>
               <div>
-                <div class="font-semibold mt-2">Topic Covered:</div>
+                <div class="font-semibold mt-2">Covered:</div>
                 <p v-for="topic in app.concepts" :key="topic">{{ topic }}</p>
               </div>
             </div>
@@ -48,55 +45,32 @@ export default {
   setup() {
     const list = ref([
       {
-        path: "/dc-heros",
-        title: "DcHeros",
-        concepts: [
-          "v-for, v-bind, v-model, v-on",
-          "methods",
-          "computed properties ( getters & setters)",
-          "vue components",
-        ],
-      },
-      {
-        path: "/calendar",
+        path: "/calendly",
         title: "Calendar",
         concepts: ["Javascript Date", "Vue Router"],
       },
       {
+        path: "/quiz",
+        title: "Quiz",
+        concepts: ["Javascript Fetch", "Open TDB API"],
+      },
+      {
+        path: "/pet",
+        title: "Adopt Pet",
+        concepts: ["Javascript Fetch", "Open TDB API"],
+      },
+      {
         path: "/markdown",
         title: "Markdown",
-        concepts: ["Using External Library", "Vue Mixins"],
-      },
-      {
-        path: "/slider-carousel",
-        title: "Slider",
-        concepts: [
-          "Vue Transition & Animation",
-          "virtual DOM",
-          "lifecycle hooks",
-        ],
-      },
-      {
-        path: "/calculator",
-        title: "Calculator",
-        concepts: [
-          "resuable composition api",
-          "window event listener",
-          "Composition API",
-        ],
-      },
-      {
-        path: "/resuseable-modal",
-        title: "ReuseableModal",
-        concepts: ["slots", "named slots"],
+        concepts: ["External JS Depedency", "Vue Mixins"],
       },
       {
         path: "/chat",
         title: "Chat",
         concepts: [
           "Firebase Realtime Database",
-          "vuex v4",
-          "Custom Router middleware",
+          "Vuex v4",
+          "Custom Router Middleware",
         ],
       },
       {
@@ -107,7 +81,7 @@ export default {
           "external API",
           "reactive vue3 api",
           "pagination",
-          "envirnment variable (.env file)",
+          "envirnment variable",
         ],
       },
       {
@@ -123,16 +97,16 @@ export default {
     const login = ref({
       title: "Login Modal",
       concepts: [
-        "Create Modal",
+        "Custom Modal",
         "Vue Custom Events Emitting",
         "Form Handling",
-        "firebase authentication",
-        "loading effect",
+        "Firebase authentication",
+        "Loading effect",
         "Template Refs",
-        "component props",
-        "firebase google login",
+        "Component props",
+        "Firebase google login",
         "Refactoring with component",
-        " vue3 teleport",
+        "Vue3 teleport",
       ],
     });
     return { list, login };

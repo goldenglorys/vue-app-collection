@@ -3,10 +3,12 @@ import firebase from "firebase/app";
 
 // Add the Firebase products that you want to use
 import "firebase/auth";
+import "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCyMN_5FJyDpjjQ27On5N1KHBnpwvUu4W8",
     authDomain: "vue-apps-collection.firebaseapp.com",
+    databaseURL: "https://vue-apps-collection-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "vue-apps-collection",
     storageBucket: "vue-apps-collection.appspot.com",
     messagingSenderId: "1049976501122",

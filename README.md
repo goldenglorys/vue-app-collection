@@ -56,13 +56,13 @@ Tensorflow Object Detection App
 6. Chat
    * Firebase Realtime Database
    * Vuex v4
-   * Custom Router middleware
+   * Custom Router Middleware
 7. User Crud
    * Using axios
    * External API
    * Reactive vue3 api
    * Pagination
-   * Environment variable (.env file)
+   * Environment Variable
 8. Tensorflow Object Detection
    * Using Tensorflow with Vue
    * Device Camera Open
