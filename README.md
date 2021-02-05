@@ -1,5 +1,7 @@
 # Vue 3 Apps Collection
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cfd2dad7-d53d-4e78-b535-b684fddad64a/deploy-status)](https://app.netlify.com/sites/vue-apps/deploys)
+
 ## Techs, Tools & Platform Used
 
 1. Bootstrap
@@ -21,7 +23,7 @@ Adopt Pet App
 Markdown Converter App
 Login With Firebase Backend
 User Crud API App
-Chat With Firebase Real-time Db Function
+Chat With Firebase Real-time DB Function
 Tensorflow Object Detection App
 ## Demo 👇
 
