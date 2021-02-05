@@ -32,8 +32,16 @@
               <button
                 class="w-full rounded shadow-md bg-gradient-to-r from-green-600 to-green-400 text-white p-2"
                 type="submit"
+                v-if="!isLoading"
               >
                 Submit
+              </button>
+              <button
+                class="w-full rounded shadow-md bg-gray-200 p-2"
+                disabled
+                v-if="isLoading"
+              >
+                Loading...
               </button>
             </div>
           </form>
@@ -45,15 +53,38 @@
 </template>
 
 <script>
+import firebase from "../helpers/firebase";
 export default {
   data() {
     return {
       email: "email@domain.com",
       password: "password",
+      isLoading: false,
     };
   },
   methods: {
-    submit() {},
+    submit() {
+      this.isLoading = true;
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then((userCredential) => {
+          var user = userCredential.user;
+          console.log(user);
+          this.isLoading = false;
+          this.closeLoginModal();
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+          this.isLoading = false;
+          this.closeLoginModal();
+        });
+    },
+    closeLoginModal() {
+      this.$emit("close-login-modal");
+    },
   },
 };
 </script>

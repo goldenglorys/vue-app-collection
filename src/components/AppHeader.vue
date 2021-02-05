@@ -10,10 +10,13 @@
       >{{ item.title }}</router-link
     >
     <button class="mx-2" @click="$emit('open-login-modal')">Login</button>
+    <button class="mx-2" @click="logout">Logout</button>
   </nav>
 </template>
 
 <script>
+import firebase from "../helpers/firebase";
+
 export default {
   data() {
     return {
@@ -24,6 +27,19 @@ export default {
         { title: "Markdown", to: "/markdown" },
       ],
     };
+  },
+  methods: {
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          console.log("User logged out");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>
