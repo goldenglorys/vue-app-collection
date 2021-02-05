@@ -15,7 +15,10 @@
         <div class="flex justify-center">
           <div class="w-11/12 grid grid-cols-2 md:grid-cols-3 gap-4">
             <div v-for="app in list" :key="app.path" class="text-left my-4">
-              <router-link class="w-full" :to="app.path">
+              <router-link
+                class="w-full hover:no-underline hover:text-black"
+                :to="app.path"
+              >
                 <p class="text-xl font-semibold">
                   <span>&#10004;</span> {{ app.title }}
                 </p>
