@@ -4,7 +4,15 @@
       <h1 class="text-center text-2xl">Real Time Chat</h1>
       <div class="border rounded-lg">
         <div class="h-64 p-2">
-          <div v-for="chat in state.chats" :key="chat.message">
+          <div
+            v-for="chat in state.chats"
+            :key="chat.message"
+            :class="
+              chat.userEmail === userEmail
+                ? 'text-right w-full'
+                : 'text-left w-full'
+            "
+          >
             {{ chat.message }}
           </div>
         </div>
@@ -14,6 +22,7 @@
             v-model="state.message"
             placeholder="Start typing..."
             class="border rounded shadow p-1"
+            @keydown.enter="sendMessage"
           />
         </div>
       </div>
@@ -22,27 +31,41 @@
 </template>
 
 <script>
-import { onMounted, reactive } from "vue";
-import firebase from "../helpers/firebase";
+import { computed, onMounted, reactive } from "vue";
+import { chatRefs } from "../helpers/firebase";
+import { useStore } from "vuex";
 
 export default {
   setup() {
     const state = reactive({
-      chats: {},
+      chats: [],
       message: "",
+      // userId: null,
+      // userEmail: null,
     });
+
+    const store = useStore();
+    const userId = computed(() => store.state.authUser.id);
+    const userEmail = computed(() => store.state.authUser.email);
     onMounted(async () => {
-      const database = firebase.database();
-      console.log(database);
-      const collection = database.ref("chats");
-      const data = await collection.once("value");
-      state.chats = data.val();
-      collection.on("value", (snapshot) => {
-        state.chats = snapshot.val();
+      chatRefs.on("child_added", (snapshot) => {
+        // state.userId = firebase.auth().currentUser.uid;
+        // state.userEmail = firebase.auth().currentUser.email;
+        state.chats.push({ key: snapshot.key, ...snapshot.val() });
       });
     });
 
-    return { state };
+    function sendMessage() {
+      const newChat = chatRefs.push();
+
+      newChat.set({
+        userId: state.userId,
+        userEmail: state.userEmail,
+        message: state.message,
+      });
+      state.message = "";
+    }
+    return { state, sendMessage, userId, userEmail };
   },
 };
 </script>

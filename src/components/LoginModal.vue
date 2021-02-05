@@ -76,16 +76,16 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then((userCredential) => {
-          var user = userCredential.user;
-          console.log(user);
+        .then(() => {
+          // var user = userCredential.user;
+          // console.log(user);
           this.isLoading = false;
           this.closeLoginModal();
         })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+        .catch(() => {
+          // var errorCode = error.code;
+          // var errorMessage = error.message;
+          // console.log(errorCode, errorMessage);
           this.isLoading = false;
           this.closeLoginModal();
         });

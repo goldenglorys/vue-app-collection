@@ -20,7 +20,7 @@
 import firebase from "../helpers/firebase";
 
 export default {
-  props: { isLoggedIn: { type: Boolean, required: true } },
+  // props: { isLoggedIn: { type: Boolean, required: true } },
   data() {
     return {
       routerLists: [
@@ -32,17 +32,14 @@ export default {
       ],
     };
   },
+  computed: {
+    isLoggedIn() {
+      return this.$store.state.isLoggedIn;
+    },
+  },
   methods: {
     logout() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          console.log("User logged out");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      firebase.auth().signOut();
     },
   },
 };

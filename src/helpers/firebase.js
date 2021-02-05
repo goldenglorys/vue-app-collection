@@ -18,4 +18,8 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// Connect to the rt-db reference
+const database = firebase.database();
+export const chatRefs = database.ref("chats");
+
 export default firebase;
