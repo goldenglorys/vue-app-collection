@@ -6,6 +6,7 @@ import Quiz from './pages/Quiz';
 import Markdown from './pages/Markdown';
 import Chat from './pages/Chat';
 import Crud from './pages/Crud';
+import Tensorflow from './pages/Tensorflow';
 
 import store from './store/index';
 
@@ -21,6 +22,7 @@ const routes = [
         meta: {middleware: 'auth'}, 
     },
     {path: '/crud', component: Crud},
+    {path: '/tensorflow', component: Tensorflow},
 ]
 
 const router = createRouter({

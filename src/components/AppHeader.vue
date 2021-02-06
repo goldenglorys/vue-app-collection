@@ -30,6 +30,7 @@ export default {
         { title: "Markdown", to: "/markdown" },
         { title: "Chat", to: "/chat" },
         { title: "Crud", to: "/crud" },
+        { title: "Tensorflow", to: "/tensorflow" },
       ],
     };
   },
