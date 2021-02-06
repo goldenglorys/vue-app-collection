@@ -29,6 +29,7 @@ export default {
         { title: "Quiz", to: "/quiz" },
         { title: "Markdown", to: "/markdown" },
         { title: "Chat", to: "/chat" },
+        { title: "Crud", to: "/crud" },
       ],
     };
   },

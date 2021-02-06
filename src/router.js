@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Markdown from './pages/Markdown';
 import Chat from './pages/Chat';
+import Crud from './pages/Crud';
+
 import store from './store/index';
 
 
@@ -18,6 +20,7 @@ const routes = [
         component: Chat,
         meta: {middleware: 'auth'}, 
     },
+    {path: '/crud', component: Crud},
 ]
 
 const router = createRouter({

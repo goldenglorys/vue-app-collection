@@ -74,8 +74,8 @@ export default {
         ],
       },
       {
-        path: "/user-crud",
-        title: "UserCrud",
+        path: "/crud",
+        title: "Crud",
         concepts: [
           "using axios",
           "external API",
