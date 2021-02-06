@@ -5,13 +5,19 @@ import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Markdown from './pages/Markdown';
 import Chat from './pages/Chat';
+import store from './store/index';
+
 
 const routes = [
     {path: '/', component: Home},
     {path: '/calendly', component: Calendar},
     {path: '/quiz', component: Quiz},
     {path: '/markdown', component: Markdown},
-    {path: '/chat', component: Chat},
+    {
+        path: '/chat',
+        component: Chat,
+        meta: {middleware: 'auth'}, 
+    },
 ]
 
 const router = createRouter({
@@ -19,4 +25,16 @@ const router = createRouter({
     routes,
 });
 
+router.beforeEach((to, _, next) => {
+    if(to.meta.middleware){
+        if(!store.state.isLoggedIn){
+            next('/')
+            alert("Please login first")
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+})
 export default router;

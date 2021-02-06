@@ -94,6 +94,11 @@ export default {
       this.$emit("close-login-modal");
     },
   },
+  computed: {
+    isLoginOpen() {
+      return this.$store.state.isOpen;
+    },
+  },
 };
 </script>
 

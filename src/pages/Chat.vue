@@ -1,33 +1,35 @@
 <template>
-  <section class="flex w-full">
-    <div class="m-auto">
-      <h1 class="text-center text-2xl">Real Time Chat</h1>
-      <div class="border rounded-lg">
-        <div class="h-64 p-2">
-          <div
-            v-for="chat in state.chats"
-            :key="chat.message"
-            :class="
-              chat.userEmail === userEmail
-                ? 'text-right w-full'
-                : 'text-left w-full'
-            "
-          >
-            {{ chat.message }}
+  <div v-if="isOpen">
+    <section class="flex w-full">
+      <div class="m-auto">
+        <h1 class="text-center text-2xl">Real Time Chat</h1>
+        <div class="border rounded-lg">
+          <div class="h-64 p-2">
+            <div
+              v-for="chat in state.chats"
+              :key="chat.message"
+              :class="
+                chat.userEmail === userEmail
+                  ? 'text-right w-full'
+                  : 'text-left w-full'
+              "
+            >
+              {{ chat.message }}
+            </div>
+          </div>
+          <div class="h-8 p-2">
+            <input
+              type="text"
+              v-model="state.message"
+              placeholder="Start typing..."
+              class="border rounded shadow p-1"
+              @keydown.enter="sendMessage"
+            />
           </div>
         </div>
-        <div class="h-8 p-2">
-          <input
-            type="text"
-            v-model="state.message"
-            placeholder="Start typing..."
-            class="border rounded shadow p-1"
-            @keydown.enter="sendMessage"
-          />
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>

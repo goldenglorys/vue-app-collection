@@ -5,6 +5,7 @@ const store = createStore({
         return {
             isLoggedIn: false,
             authUser: {},
+            isOpen: false,
         }
     },
     mutations: {
