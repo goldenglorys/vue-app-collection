@@ -31,6 +31,7 @@ export default {
         { title: "Chat", to: "/chat" },
         { title: "Crud", to: "/crud" },
         { title: "Tensorflow", to: "/tensorflow" },
+        { title: "Adopt Pets", to: "/adopt-pet" },
       ],
     };
   },

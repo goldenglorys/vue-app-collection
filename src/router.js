@@ -7,6 +7,7 @@ import Markdown from './pages/Markdown';
 import Chat from './pages/Chat';
 import Crud from './pages/Crud';
 import Tensorflow from './pages/Tensorflow';
+import AdoptPet from './pages/AdoptPet';
 
 import store from './store/index';
 
@@ -23,6 +24,7 @@ const routes = [
     },
     {path: '/crud', component: Crud},
     {path: '/tensorflow', component: Tensorflow},
+     {path: '/adopt-pet', component: AdoptPet},
 ]
 
 const router = createRouter({
