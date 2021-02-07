@@ -9,6 +9,10 @@ import Crud from './pages/Crud';
 import Tensorflow from './pages/Tensorflow';
 import AdoptPet from './pages/AdoptPet';
 
+import Cats from './components/Cats';
+import Dogs from './components/Dogs';
+import Pet from './components/Pet';
+
 import store from './store/index';
 
 
@@ -24,7 +28,10 @@ const routes = [
     },
     {path: '/crud', component: Crud},
     {path: '/tensorflow', component: Tensorflow},
-     {path: '/adopt-pet', component: AdoptPet},
+    {path: '/adopt-pet', component: AdoptPet},
+    {path: '/cats', component: Cats},
+    {path: '/dogs', component: Dogs},
+    {path: '/pet', component: Pet},
 ]
 
 const router = createRouter({

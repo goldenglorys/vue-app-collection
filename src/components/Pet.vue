@@ -6,16 +6,11 @@
       <router-link to="/dogs">Dogs</router-link> |
       <router-link to="/pet">Pet</router-link>
     </div>
-    <div>
-      <h1 class="text-center text-4xl my-4">Adopt a new best friend.</h1>
-    </div>
   </div>
 </template>
 
 <script>
-export default {
-  components: {},
-};
+export default {};
 </script>
 
 <style>
