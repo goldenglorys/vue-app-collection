@@ -19,6 +19,14 @@ const store = createStore({
         },
         setAuthUser(state, userPayload){
             state.authUser = userPayload;
+        },
+        appendPet: (state, {species, pet}) => {
+            state[species].push(pet)
+        }
+    },
+    actions: {
+        addPet: ({commit}, payload) => {
+            commit('appendPet', payload)
         }
     }
 })
