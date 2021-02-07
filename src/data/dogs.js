@@ -1,5 +1,6 @@
 export default [
     {
+        id: 1,
         name: "Zeus",
         breed: "afgan hound",
         gender: "male",
@@ -10,6 +11,7 @@ export default [
         notes: "Super Friendly"
     },
     {
+        id: 2,
         name: "Katie",
         breed: "golden retriever",
         gender: "female",
@@ -20,6 +22,7 @@ export default [
         notes: "Super Friendly"
     },
     {
+        id: 3,
         name: "Hillary",
         breed: "mut",
         gender: "female",
@@ -28,7 +31,9 @@ export default [
         weight: 37,
         location: "threed",
         notes: "Super Friendly"
-    },{
+    },
+    {
+        id: 4,
         name: "Sheeba",
         breed: "collie",
         gender: "female",

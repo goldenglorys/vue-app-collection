@@ -3,8 +3,7 @@
     <div class="text-center my-3">
       <router-link to="/adopt-pet">Home</router-link> |
       <router-link to="/cats">Cats</router-link> |
-      <router-link to="/dogs">Dogs</router-link> |
-      <router-link to="/pet">Pet</router-link>
+      <router-link to="/dogs">Dogs</router-link>
     </div>
     <div class="container">
       <h1 class="text-center text-4xl my-4">Cats for Adoption</h1>
@@ -20,8 +19,15 @@
           <th>Notes</th>
         </thead>
         <tbody>
-          <tr v-for="cat in cats" :key="cat.name">
-            <td>{{ cat.name }}</td>
+          <tr v-for="cat in cats" :key="cat.id">
+            <td>
+              <router-link
+                :to="`/pets/cats/${cat.id}`"
+                class="hover: no-underline"
+                style="text-decoration: none"
+                >{{ cat.name }}</router-link
+              >
+            </td>
             <td>{{ cat.breed }}</td>
             <td>{{ cat.gender }}</td>
             <td>{{ cat.age }}</td>
@@ -37,13 +43,14 @@
 </template>
 
 <script>
-import cats from "../data/cats";
+import { mapState } from "vuex";
 
 export default {
   data() {
-    return {
-      cats,
-    };
+    return {};
+  },
+  computed: {
+    ...mapState(["cats"]),
   },
 };
 </script>

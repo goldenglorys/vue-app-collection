@@ -31,7 +31,7 @@ const routes = [
     {path: '/adopt-pet', component: AdoptPet},
     {path: '/cats', component: Cats},
     {path: '/dogs', component: Dogs},
-    {path: '/pet', component: Pet},
+    {path: '/pets/:species/:id', component: Pet},
 ]
 
 const router = createRouter({

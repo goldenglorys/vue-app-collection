@@ -1,5 +1,6 @@
 export default [
     {
+        id: 1,
         name: "Fish",
         breed: "tuxedo",
         gender: "male",
@@ -10,6 +11,7 @@ export default [
         notes: "Sweet kitty. He loves getting his belly rubbed."
     },
     {
+        id: 2,
         name: "Henry",
         breed: "tabby",
         gender: "male",
@@ -20,6 +22,7 @@ export default [
         notes: "Super Friendly"
     },
     {
+        id: 3,
         name: "Roger",
         breed: "tabby",
         gender: "male",
@@ -28,7 +31,9 @@ export default [
         weight: 15,
         location: "threed",
         notes: "Super Friendly"
-    },{
+    },
+    {
+        id: 4,
         name: "Kitkat",
         breed: "bombay",
         gender: "female",
