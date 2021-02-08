@@ -14,7 +14,7 @@
 8. Axios
 9. Fetch
 10. Netlify
-11. Tensorflow
+    <!-- 11. Tensorflow -->
 
 ## Demo 👇
 
@@ -48,17 +48,12 @@
     - Firebase Realtime Database
     - Vuex v4
     - Custom Router Middleware
-7.  User Crud
-    - Using axios
-    - External API
-    - Reactive vue3 api
-    - Pagination
-    - Environment Variable
-8.  Tensorflow Object Detection
-    - Using Tensorflow with Vue
-    - Device Camera Open
-    - Working with Canvas
-9.  Todo Manager
+7.  User Crud - Using axios - External API - Reactive vue3 api - Pagination - Environment Variable
+    <!-- 8.  Tensorflow Object Detection
+        - Using Tensorflow with Vue
+        - Device Camera Open
+        - Working with Canvas -->
+8.  Todo Manager
     - Indept Vuex Concepts
       - State - App level state/data (todos data)
       - Getters - Get pieces of state or computed values from state
