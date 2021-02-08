@@ -30,16 +30,24 @@ const store = createStore({
     setTodos: (state, todosPayload) => {
       state.todos = todosPayload;
     },
+    newTodo: (state, todo) => state.todos.unshift(todo),
   },
   actions: {
     addPet: ({ commit }, payload) => {
       commit("appendPet", payload);
     },
-    async fetchTodos() {
+    async fetchTodos({ commit }) {
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/todos"
       );
-      this.commit("setTodos", response.data);
+      commit("setTodos", response.data);
+    },
+    async addTodo({ commit }, title) {
+      const response = await axios.post(
+        "https://jsonplaceholder.typicode.com/todos",
+        { title, completed: false }
+      );
+      commit("newTodo", response.data);
     },
   },
   getters: {
