@@ -4,8 +4,23 @@
       <AddTodo />
       <FilterTodo />
       <h3 class="text-2xl"><b>Todos</b></h3>
+      <div class="legend">
+        <span>Double click to mark as complete</span>
+        <span>
+          <span class="incomplete-box"> = Incomplete</span>
+        </span>
+        <span>
+          <span class="complete-box"> = Complete</span>
+        </span>
+      </div>
       <div class="todos">
-        <div class="todo" v-for="todo in getAllTodos" :key="todo.id">
+        <div
+          class="todo"
+          v-for="todo in getAllTodos"
+          :key="todo.id"
+          @dblclick="onDblClick(todo)"
+          :class="{ 'is-complete': todo.completed }"
+        >
           {{ todo.title }}
           <i class="fas fa-trash-alt" @click="deleteTodo(todo.id)"></i>
         </div>
@@ -27,7 +42,16 @@ export default {
   },
   computed: mapGetters(["getAllTodos"]),
   methods: {
-    ...mapActions(["fetchTodos", "deleteTodo"]),
+    ...mapActions(["fetchTodos", "deleteTodo", "updateTodo"]),
+    onDblClick(todo) {
+      const updatedTodo = {
+        id: todo.id,
+        title: todo.title,
+        completed: !todo.completed,
+      };
+
+      this.updateTodo(updatedTodo);
+    },
   },
   created() {
     this.fetchTodos();
@@ -69,5 +93,31 @@ i {
   right: 10px;
   color: #fff;
   cursor: pointer;
+}
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.complete-box {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #35495e;
+}
+.incomplete-box {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #41b883;
+}
+@media (max-width: 500px) {
+  .todos {
+    grid-template-columns: 1fr;
+  }
+}
+.is-complete {
+  background: #35495e;
+  color: #fff;
 }
 </style>
