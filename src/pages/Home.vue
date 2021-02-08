@@ -93,6 +93,15 @@ export default {
           "Working with Canvas",
         ],
       },
+      {
+        path: "/todos",
+        title: "Todo Manager",
+        concepts: [
+          "Indept Vuex Concepts",
+          "Indept State Management Usage",
+          "Use of external API",
+        ],
+      },
     ]);
     const login = ref({
       title: "Login Modal",

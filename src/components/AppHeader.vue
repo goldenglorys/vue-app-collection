@@ -32,6 +32,7 @@ export default {
         { title: "Crud", to: "/crud" },
         { title: "Tensorflow", to: "/tensorflow" },
         { title: "Adopt Pets", to: "/adopt-pet" },
+        { title: "Todo Manager", to: "/todos" },
       ],
     };
   },
@@ -48,5 +49,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

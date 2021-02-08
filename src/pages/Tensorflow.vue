@@ -6,11 +6,10 @@
         <h1 class="text-2xl my-4">Tensorflow Object Detection</h1>
         <div class="flex justify-center">
           <img
-            src="https://images.unsplash.com/photo-1610470850940-27b52ca7c0fe"
+            src="https://car-images.bauersecure.com/pagefiles/78015/tesla_roadster_08.jpg"
             width="200"
             alt=""
             ref="imgRef"
-            crossorigin="anonymous"
           />
         </div>
       </div>
@@ -20,16 +19,18 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { ref, onMounted } from "vue";
 require("@tensorflow/tfjs-backend-cpu");
 require("@tensorflow/tfjs-backend-webgl");
 const cocoSsd = require("@tensorflow-models/coco-ssd");
 
 export default {
   setup() {
-    const imgRef = ref({});
+    const imgRef = ref();
     onMounted(async () => {
+      console.log(imgRef.value);
       const img = imgRef.value;
+
       // Load the model.
       const model = await cocoSsd.load();
 

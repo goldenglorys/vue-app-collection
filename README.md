@@ -16,54 +16,54 @@
 10. Netlify
 11. Tensorflow
 
-
-Calendly App
-Quiz App
-Adopt Pet App
-Markdown Converter App
-Login With Firebase Backend
-User Crud API App
-Chat With Firebase Real-time DB Function
-Tensorflow Object Detection App
 ## Demo 👇
 
 [Live Demo Link](https://vue-apps.netlify.app)
 
-## 10 Apps Build
+## Apps Build
 
-1.  Calendar 
-      * Javascript Date
-2. Knowledge Quiz 
-   * Javascript Fetch
-   * Open TDB API
-3. Adop Pet 
-   * Javascript Fetch
-   * Open TDB API
-4. Markdown
-   * External JS Dependency 
-   * Vue Mixins
-5. Login Page
-   * Create Modal
-   * Vue Custom Events Emitting
-   * Form Handling
-   * Firebase authentication
-   * Loading effect
-   * Template Refs
-   * Component props
-   * Firebase google login
-   * Refactoring with component
-   * Vue 3 teleport
-6. Chat
-   * Firebase Realtime Database
-   * Vuex v4
-   * Custom Router Middleware
-7. User Crud
-   * Using axios
-   * External API
-   * Reactive vue3 api
-   * Pagination
-   * Environment Variable
-8. Tensorflow Object Detection
-   * Using Tensorflow with Vue
-   * Device Camera Open
-   * Working with Canvas
+1.  Calendar
+    - Javascript Date
+2.  Knowledge Quiz
+    - Javascript Fetch
+    - Open TDB API
+3.  Adop Pet
+    - Javascript Fetch
+    - Open TDB API
+4.  Markdown
+    - External JS Dependency
+    - Vue Mixins
+5.  Login Page
+    - Create Modal
+    - Vue Custom Events Emitting
+    - Form Handling
+    - Firebase authentication
+    - Loading effect
+    - Template Refs
+    - Component props
+    - Firebase google login
+    - Refactoring with component
+    - Vue 3 teleport
+6.  Chat
+    - Firebase Realtime Database
+    - Vuex v4
+    - Custom Router Middleware
+7.  User Crud
+    - Using axios
+    - External API
+    - Reactive vue3 api
+    - Pagination
+    - Environment Variable
+8.  Tensorflow Object Detection
+    - Using Tensorflow with Vue
+    - Device Camera Open
+    - Working with Canvas
+9.  Todo Manager
+    - Indept Vuex Concepts
+      - State - App level state/data (todos data)
+      - Getters - Get pieces of state or computed values from state
+      - Actions - Called from components to commit a mutation
+      - Mutations - Mutate the state/update the data
+      - Modules - Each module in the app can have its own state, getters, actions, & mutations
+    - Indept State Management Usage
+    - Use of external API
