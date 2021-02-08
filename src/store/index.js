@@ -55,6 +55,13 @@ const store = createStore({
       await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
       commit("removeTodo", id);
     },
+    async filterTodos({ commit }, e) {
+      const limit = parseInt(e.target.value);
+      const response = await axios.get(
+        `https://jsonplaceholder.typicode.com/todos?_limit=${limit}`
+      );
+      commit("setTodos", response.data);
+    },
   },
   getters: {
     getAllTodos: (state) => {

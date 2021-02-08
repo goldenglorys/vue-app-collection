@@ -2,6 +2,7 @@
   <div id="todo-body">
     <div id="todo-container">
       <AddTodo />
+      <FilterTodo />
       <h3 class="text-2xl"><b>Todos</b></h3>
       <div class="todos">
         <div class="todo" v-for="todo in getAllTodos" :key="todo.id">
@@ -17,10 +18,12 @@
 import { mapGetters, mapActions } from "vuex";
 
 import AddTodo from "../components/AddTodo";
+import FilterTodo from "../components/FilterTodo";
 
 export default {
   components: {
     AddTodo,
+    FilterTodo,
   },
   computed: mapGetters(["getAllTodos"]),
   methods: {
