@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createStore } from "vuex";
 
 import cats from "../data/cats";
@@ -13,16 +14,7 @@ const store = createStore({
       isOpen: false,
       cats,
       dogs,
-      todos: [
-        {
-          id: 1,
-          title: "Todo One",
-        },
-        {
-          id: 1,
-          title: "Todo Two",
-        },
-      ],
+      todos: [],
     };
   },
   mutations: {
@@ -35,10 +27,19 @@ const store = createStore({
     appendPet: (state, { species, pet }) => {
       state[species].push(pet);
     },
+    setTodos: (state, todosPayload) => {
+      state.todos = todosPayload;
+    },
   },
   actions: {
     addPet: ({ commit }, payload) => {
       commit("appendPet", payload);
+    },
+    async fetchTodos() {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos"
+      );
+      this.commit("setTodos", response.data);
     },
   },
   getters: {

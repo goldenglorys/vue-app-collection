@@ -12,10 +12,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  computed: { ...mapGetters(["getAllTodos"]) },
+  computed: mapGetters(["getAllTodos"]),
+  methods: {
+    ...mapActions(["fetchTodos"]),
+  },
+  created() {
+    this.fetchTodos();
+  },
 };
 </script>
 
