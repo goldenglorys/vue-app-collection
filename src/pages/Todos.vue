@@ -1,6 +1,7 @@
 <template>
   <div id="todo-body">
     <div id="todo-container">
+      <AddTodo />
       <h3 class="text-2xl"><b>Todos</b></h3>
       <div class="todos">
         <div class="todo" v-for="todo in getAllTodos" :key="todo.id">
@@ -14,7 +15,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
+import AddTodo from "../components/AddTodo";
+
 export default {
+  components: {
+    AddTodo,
+  },
   computed: mapGetters(["getAllTodos"]),
   methods: {
     ...mapActions(["fetchTodos"]),
