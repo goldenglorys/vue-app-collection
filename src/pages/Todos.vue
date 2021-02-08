@@ -6,6 +6,7 @@
       <div class="todos">
         <div class="todo" v-for="todo in getAllTodos" :key="todo.id">
           {{ todo.title }}
+          <i class="fas fa-trash-alt" @click="deleteTodo(todo.id)"></i>
         </div>
       </div>
     </div>
@@ -23,7 +24,7 @@ export default {
   },
   computed: mapGetters(["getAllTodos"]),
   methods: {
-    ...mapActions(["fetchTodos"]),
+    ...mapActions(["fetchTodos", "deleteTodo"]),
   },
   created() {
     this.fetchTodos();
@@ -57,6 +58,13 @@ export default {
   border-radius: 5px;
   text-align: center;
   position: relative;
+  cursor: pointer;
+}
+i {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
   cursor: pointer;
 }
 </style>
