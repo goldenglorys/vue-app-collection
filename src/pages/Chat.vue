@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isOpen">
+  <div>
     <section class="flex w-full">
       <div class="m-auto">
         <h1 class="text-center text-2xl">Real Time Chat</h1>
@@ -72,5 +72,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
